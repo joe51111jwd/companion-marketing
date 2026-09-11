@@ -26,9 +26,9 @@ import {
 export const PRODUCT_NAME = CANONICAL_PRODUCT_NAME;
 
 export const site = {
-  tagline: "Three things to hand to AI today, learned from your own work.",
+  tagline: "Recorded Skills for the work you already do.",
   description:
-    "A menu-bar Mac app that notices the repetitive work in the apps you pick and writes you a short morning digest: the three things worth handing to AI today, each with a walkthrough in a tool you already have.",
+    "A local-first Mac app: a morning digest of three things to hand to AI, and Recorded Skills you can run again with one button. Your screen never leaves your Mac.",
 };
 
 export const nav = {
@@ -44,12 +44,14 @@ export const nav = {
 };
 
 export const hero = {
-  eyebrow: "Native Mac app · menu bar only",
-  headline: "Three things to hand to AI today, learned from your own work.",
+  eyebrow: "Recorded Skills · local-first",
+  headline: "Record the work once. Run it again with one button.",
+  subhead: "Companion notices the repetitive work on your Mac, then turns it into a Recorded Skill you can run in the AI tools you already have.",
+  pitch: "Morning digest teaches the next three things. Recorded Skills is the one-button follow-through — local-first, on this Mac.",
   /** §8.10, sentence 1 — the primary copy on this page. */
   primary: TAGLINE.readsText,
   ctaPrimary: { label: "Download for Mac", href: "/signup" },
-  ctaSecondary: { label: "See the digest", href: "#demo" },
+  ctaSecondary: { label: "See Recorded Skills", href: "#demo" },
   ctaNote: `${PRICING.trial}. ${PRICING.individualGuaranteeShort}. Mac, macOS 15 or later.`,
   noteCard: {
     label: "What it keeps",
@@ -633,6 +635,49 @@ export const riskReversal = {
   claim: PRICING.claimRefundButton,
 };
 
+
+/** Homepage offer band — locked $50 / $49 + risk reversal. */
+export const offerBand = {
+  eyebrow: "The offer",
+  audience: "For managers who have to show AI adoption, not talk about it.",
+  result: PRICING.offerOneLiner,
+  price: `${PRICING.individualPrice}${PRICING.individualPeriod} individual · ${PRICING.teamPrice}${PRICING.teamPeriod} teams, ${PRICING.teamMinimum}.`,
+  guarantee: RISK_REVERSAL.headline,
+  guaranteeBody: RISK_REVERSAL.body,
+  commitCta: { label: "Start the 7-day trial", href: "/signup" },
+  pricingCta: { label: "See pricing", href: "/pricing" },
+  waitlistCta: { label: "Join the waitlist", href: "/signup" },
+  waitlistNote: `${PRICING.trial}. ${TAGLINE.pauseDelete}`,
+};
+
+
+/** Interactive Recorded Skills window — example content only. */
+export const skillsDemo = {
+  eyebrow: "Recorded Skills",
+  localBadge: "Local-first",
+  windowTitle: "Recorded Skills",
+  exampleBadge: "Example skill",
+  flowLabel: "How a skill is made",
+  flow: [
+    { n: "01", title: "You do the work.", body: "Companion notices the repeated steps in an app you picked." },
+    { n: "02", title: "It writes the skill.", body: "A short, content-free recording stays on this Mac." },
+    { n: "03", title: "You press Run.", body: "The same walkthrough opens beside the work — one button." },
+  ],
+  trustLine: "Recorded Skills stay on this Mac. Your screen never leaves.",
+  skillName: "Friday parent-update email",
+  skillMeta: "Gmail · Claude · 4 steps · local",
+  runLabel: "Run skill",
+  runHint: "One button. The walkthrough opens beside Gmail.",
+  stepsLabel: "Recorded steps",
+  steps: [
+    { id: "open", title: "Open Claude on your Mac", meta: "Tool already installed" },
+    { id: "paste", title: "Paste the bullet list of updates", meta: "Names stay on this Mac" },
+    { id: "ask", title: "Ask for drafts in your usual tone", meta: "4 steps · 6 minutes" },
+    { id: "send", title: "Review, send, mark the skill done", meta: "Same Friday shape" },
+  ],
+  exampleNote: "Example Recorded Skill for the product story — not a live recording.",
+};
+
 /** Homepage product-stage chrome — example UI only. */
 export const productChrome = {
   desktopTitle: `${PRODUCT_NAME} Desktop`,
@@ -657,6 +702,14 @@ export const layered = {
 /** Wide two-column feature rows — sparse copy, dense UI. */
 export const features = {
   items: [
+    {
+      id: "skills",
+      kicker: "Recorded Skills",
+      title: "One button. The same walkthrough, again.",
+      body: "Digests teach the AI tools already on the Mac. Recorded Skills is the one-button follow-through.",
+      href: "#demo",
+      link: "See a Recorded Skill",
+    },
     {
       id: "digest",
       kicker: "Morning digest",
