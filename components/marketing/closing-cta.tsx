@@ -3,6 +3,7 @@ import Link from "next/link";
 import { closing } from "@/lib/copy";
 
 export function ClosingCta() {
+  const waitlist = (closing as { waitlist?: { href: string; label: string } }).waitlist;
   return (
     <section className="closing-cta" aria-labelledby="closing-heading">
       <h2 id="closing-heading" className="closing-cta-title">
@@ -20,9 +21,9 @@ export function ClosingCta() {
           />
         </svg>
       </Link>
-      {"waitlist" in closing && closing.waitlist ? (
+      {waitlist ? (
         <p className="closing-waitlist">
-          <Link href={closing.waitlist.href}>{closing.waitlist.label} →</Link>
+          <Link href={waitlist.href}>{waitlist.label} →</Link>
         </p>
       ) : null}
       <p className="closing-cta-note">{closing.body}</p>
