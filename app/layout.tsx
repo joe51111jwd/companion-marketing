@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 
 import "./globals.css";
+import "./redesign.css";
 import { PRODUCT_NAME, site } from "@/lib/copy";
 
 export const metadata: Metadata = {
