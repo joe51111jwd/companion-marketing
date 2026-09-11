@@ -1,4 +1,4 @@
-/** Tonalist wash behind the product window — CSS/SVG only, no photo bytes. */
+/** Tonalist wash behind the product window \u2014 CSS/SVG only, no photo bytes. */
 export function WarmPainting({ className }: { className?: string }) {
   return (
     <svg
