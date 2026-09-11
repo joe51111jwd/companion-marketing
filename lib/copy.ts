@@ -24,3 +24,21 @@ import {
 } from "./canonical";
 
 export const PRODUCT_NAME = CANONICAL_PRODUCT_NAME;
+
+export const site = {
+  tagline: "Three things to hand to AI today, learned from your own work.",
+  description:
+    "A menu-bar Mac app that notices the repetitive work in the apps you pick and writes you a short morning digest: the three things worth handing to AI today, each with a walkthrough in a tool you already have.",
+};
+
+export const nav = {
+  skipToContent: "Skip to content",
+  brandHome: `${PRODUCT_NAME} home`,
+  links: [
+    { label: "Product", href: "/" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "Trust", href: "/privacy" },
+  ],
+  signIn: { label: "Sign in", href: "/signup" },
+  primaryCta: { label: "Download for Mac", href: "/signup" },
+};
