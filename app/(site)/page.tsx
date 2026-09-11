@@ -1,139 +1,157 @@
 import Link from "next/link";
 
-import { ClosingCta } from "@/components/marketing/closing-cta";
-import { FeatureRows } from "@/components/marketing/feature-rows";
-import { LayeredWindows } from "@/components/marketing/layered-windows";
-import { QuoteGrid } from "@/components/marketing/quote-grid";
-import { ToolStrip } from "@/components/marketing/tool-strip";
-import { DigestDemo } from "@/components/digest-demo";
 import { SkillsDemo } from "@/components/skills-demo";
-import {
-  hero,
-  homePricing,
-  offerBand,
-  optInExceptions,
-  pricing,
-  riskReversal,
-} from "@/lib/copy";
+
+const HOW = [
+  {
+    title: "Notice",
+    body: "Same reply shape, nine times last week.",
+  },
+  {
+    title: "Teach",
+    body: "Walkthrough opens beside the work (Claude, ChatGPT, Copilot…).",
+  },
+  {
+    title: "Record once",
+    body: "You opt in. Steps stay on this Mac. Accessibility-first — not screenshot-and-keep.",
+  },
+  {
+    title: "Run",
+    body: "AI streamlines redundant clicks. One-button skill.",
+  },
+] as const;
+
+const TRUST = [
+  {
+    title: "Local by default",
+    body: "Accessibility capture. Pixels classified on-device and discarded. Nothing uploads in the background.",
+  },
+  {
+    title: "Managers see aggregates",
+    body: "Seats consented · active days · suggestions tried · AI-tool minutes. No screen, titles, or descriptions.",
+  },
+  {
+    title: "You stay in control",
+    body: "Allowlist apps. Pause anytime. Delete everything anytime.",
+  },
+] as const;
 
 export default function MarketingPage() {
   return (
     <>
       <Hero />
-      <OfferBand />
-      <ToolStrip />
-      <LayeredWindows />
-      <FeatureRows />
-      <section id="digest" className="hero digest-stack" aria-labelledby="digest-demo-heading">
-        <div className="hero-copy">
-          <p className="feature-kicker">Morning digest</p>
-          <h2 id="digest-demo-heading" className="feature-title">
-            Three things to hand to AI today.
-          </h2>
-          <p className="feature-body">
-            Digests teach the AI tools already on the Mac. Recorded Skills is the one-button
-            follow-through.
-          </p>
-        </div>
-        <div className="hero-demo">
-          <DigestDemo />
-        </div>
-      </section>
-      <QuoteGrid />
-      <PricingLine />
-      <ClosingCta />
+      <How />
+      <Trust />
+      <Pricing />
     </>
   );
 }
 
 function Hero() {
   return (
-    <section aria-labelledby="hero-heading" className="hero">
-      <div className="hero-copy">
-        <p className="feature-kicker">{hero.eyebrow}</p>
-        <h1 id="hero-heading" className="hero-headline">
-          {hero.headline}
+    <section aria-labelledby="hero-heading" className="mkt-hero">
+      <div className="mkt-hero-copy">
+        <h1 id="hero-heading" className="mkt-hero-h1">
+          Turn your actions into skills — automatically, safely.
         </h1>
-        <p className="hero-subhead">{hero.subhead}</p>
-        <p className="hero-pitch">{hero.pitch}</p>
-        <div className="hero-actions">
-          <Link href={hero.ctaPrimary.href} className="hero-cta-primary">
-            {hero.ctaPrimary.label}
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-              <path
-                d="M7 2v7.2M4.2 7.4 7 10.2l2.8-2.8M2.5 12h9"
-                stroke="currentColor"
-                strokeWidth="1.4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+        <p className="mkt-hero-sub">
+          Recorded Skills notices repeats, teaches a walkthrough in the AI tool you already have,
+          then records once into a one-button run. Capture stays on the Mac. Managers see
+          content-free adoption numbers — never your screen.
+        </p>
+        <div className="mkt-hero-actions">
+          <Link href="/signup" className="hero-cta-primary">
+            Start free trial
           </Link>
-          <Link href={hero.ctaSecondary.href} className="hero-cta-secondary">
-            {hero.ctaSecondary.label} →
-          </Link>
+          <a href="#demo" className="hero-cta-secondary">
+            See Recorded Skills
+          </a>
         </div>
-        <p className="hero-note">{hero.ctaNote}</p>
+        <p className="mkt-hero-micro">7-day free trial · no card · Mac, macOS 15+</p>
       </div>
 
-      <div id="demo" className="hero-demo">
+      <div id="demo" className="mkt-hero-demo">
         <SkillsDemo />
       </div>
     </section>
   );
 }
 
-function OfferBand() {
+function How() {
   return (
-    <section className="offer-band" aria-labelledby="offer-heading">
-      <p className="feature-kicker">{offerBand.eyebrow}</p>
-      <h2 id="offer-heading" className="offer-audience">
-        {offerBand.audience}
-      </h2>
-      <p className="offer-result">{offerBand.result}</p>
-      <dl className="offer-grid">
-        <div>
-          <dt>Price</dt>
-          <dd>{offerBand.price}</dd>
-        </div>
-        <div>
-          <dt>Guarantee</dt>
-          <dd>
-            <strong>{offerBand.guarantee}</strong>
-            <span>{offerBand.guaranteeBody}</span>
-          </dd>
-        </div>
-      </dl>
-      <div className="offer-actions">
-        <Link href={offerBand.commitCta.href} className="hero-cta-primary">
-          {offerBand.commitCta.label}
-        </Link>
-        <Link href={offerBand.pricingCta.href} className="hero-cta-secondary">
-          {offerBand.pricingCta.label} →
-        </Link>
-        <Link href={offerBand.waitlistCta.href} className="offer-waitlist">
-          {offerBand.waitlistCta.label} →
-        </Link>
+    <section id="product" className="mkt-section" aria-labelledby="how-heading">
+      <div className="mkt-section-inner">
+        <h2 id="how-heading" className="mkt-h2">
+          How Recorded Skills works
+        </h2>
+        <ol className="mkt-how-grid">
+          {HOW.map((item, index) => (
+            <li key={item.title} className="mkt-card">
+              <span className="mkt-step-index">{String(index + 1).padStart(2, "0")}</span>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </li>
+          ))}
+        </ol>
       </div>
-      <p className="offer-waitlist-note">{offerBand.waitlistNote}</p>
     </section>
   );
 }
 
-function PricingLine() {
+function Trust() {
   return (
-    <section className="pricing-line" aria-labelledby="pricing-line-heading">
-      <p className="feature-kicker">{pricing.eyebrow}</p>
-      <h2 id="pricing-line-heading" className="pricing-line-title">
-        {riskReversal.headline}
-      </h2>
-      <p className="pricing-line-body">{homePricing.line}</p>
-      <p className="pricing-line-optin">
-        {optInExceptions.title} {optInExceptions.note}
-      </p>
-      <Link href="/pricing" className="feature-link">
-        {homePricing.link} →
-      </Link>
+    <section id="trust" className="mkt-section mkt-section-rule" aria-labelledby="trust-heading">
+      <div className="mkt-section-inner">
+        <h2 id="trust-heading" className="mkt-h2">
+          Built to stay local
+        </h2>
+        <div className="mkt-trust-grid">
+          {TRUST.map((cell) => (
+            <article key={cell.title} className="mkt-card">
+              <h3>{cell.title}</h3>
+              <p>{cell.body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Pricing() {
+  return (
+    <section id="pricing" className="mkt-section mkt-section-rule" aria-labelledby="pricing-heading">
+      <div className="mkt-section-inner">
+        <h2 id="pricing-heading" className="mkt-h2">
+          Pricing
+        </h2>
+        <div className="mkt-pricing-grid">
+          <article className="mkt-card">
+            <h3>Individual</h3>
+            <p className="mkt-price">
+              $50<span>/mo</span>
+            </p>
+            <p>7-day free trial</p>
+            <Link href="/signup?plan=individual" className="hero-cta-primary mkt-price-cta">
+              Start free trial
+            </Link>
+          </article>
+          <article className="mkt-card">
+            <h3>Teams</h3>
+            <p className="mkt-price">
+              $49<span>/seat/mo</span>
+            </p>
+            <p>10-seat minimum</p>
+            <Link href="/signup?plan=team" className="hero-cta-secondary mkt-price-cta">
+              Start free trial
+            </Link>
+          </article>
+        </div>
+        <p className="mkt-guarantee">
+          If it doesn’t work, get your month back. Teams: any seat without measured lift in 60 days
+          is free.
+        </p>
+      </div>
     </section>
   );
 }
