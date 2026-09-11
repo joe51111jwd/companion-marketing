@@ -131,7 +131,7 @@ export const PRICING = {
 /** Granola Offer risk reversal — month back / free seats. */
 export const RISK_REVERSAL = {
   headline: "If it doesn't work, get your month back.",
-  body: "One-click refund on the individual plan — no forms, no argument. Teams: any seat that doesn't show measured lift in 60 days is free. You should feel stupid saying no.",
+  body: "If it doesn't work, get your month back. Teams: any seat without measured lift in 60 days is free.",
   individual: "Month back if it doesn't work — claim your own refund.",
   team: "Seats with no measured lift in 60 days are free.",
 } as const;
