@@ -1,1 +1,1 @@
-FILE:/tmp/copy-content-only.txt
+@/tmp/copy-content-only.txt
