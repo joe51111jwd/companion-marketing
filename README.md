@@ -31,6 +31,6 @@ Dev server: `pnpm dev` (or `npm run dev`).
 
 ## Notes for agents
 
-- Styles for the live redesign live in a single file: `app/redesign.css` (contains `mkt-hero`, `rs-frame`, etc.). Do not reintroduce an `redesign-a.css` / `redesign-b.css` barrel split.
+- Redesign styles: `app/redesign.css` is an `@import` barrel of `app/redesign-a.css` + `app/redesign-b.css`. Together they define `mkt-hero`, `rs-frame`, and the rest of the lean redesign. Keep both part files; do not replace the barrel with `PLACEHOLDER`.
 - User-facing copy is centralized in `lib/copy.ts` (`PRODUCT_NAME`).
 - Production deploys should stay in sync with `main` on this repo.
