@@ -1,1 +1,1 @@
-PLACEHOLDER_LOAD_FROM_DISK
+file:///workspace/companion-demo/web/lib/copy.ts
